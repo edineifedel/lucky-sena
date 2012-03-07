@@ -1,14 +1,11 @@
 package br.com.snowball.luckysena.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import br.com.snowball.luckysena.R;
-import br.com.snowball.luckysena.generator.SenaNumberGenerator;
 
 public class LuckyActivity extends Activity {
 	/** Called when the activity is first created. */
@@ -17,26 +14,17 @@ public class LuckyActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		Button luckyNumbersBtn = (Button) findViewById(R.id.luckyNumbersBtn);
-		luckyNumbersBtn.setOnClickListener(generateBtnListener);
+		Button chooseNumbersBtn = (Button) findViewById(R.id.luckyNumbersBtn);
+		chooseNumbersBtn.setOnClickListener(chooseNumbersBtnListener);
 	}
 
-	private OnClickListener generateBtnListener = new OnClickListener() {
+	private OnClickListener chooseNumbersBtnListener = new OnClickListener() {
 
 		@Override
-		public void onClick(View v) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(
-					LuckyActivity.this);
-			builder.setMessage(SenaNumberGenerator.generateLuckyNumbers())
-					.setTitle("Nœmeros da sorte")
-					.setNeutralButton("OK",
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-								}
-							});
-			builder.show();
+		public void onClick(View view) {
+			Intent intent = new Intent(LuckyActivity.this, NumbersChooseActivity.class);
+			startActivityForResult(intent, 0);
 		}
+			
 	};
 }

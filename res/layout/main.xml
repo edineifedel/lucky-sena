@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/mega_sena"
     android:orientation="vertical" >
 
     <Button
         android:id="@+id/luckyNumbersBtn"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/luckyNumbers" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/historyBtn"
+        android:text="@string/luckyNumbers"
+        android:width="65pt" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/historyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/luckyNumbersBtn"
+        android:text="@string/showHistory"
+        android:width="65pt" />
+
+</RelativeLayout>
