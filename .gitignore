@@ -1,6 +1,6 @@
 # Can ignore specific files
-.project
-.classpath
+#.project
+#.classpath
 
 # Use wildcards as well
 

@@ -20,7 +20,6 @@ public class LuckyActivity extends Activity {
 
 	private OnClickListener chooseNumbersBtnListener = new OnClickListener() {
 
-		@Override
 		public void onClick(View view) {
 			Intent intent = new Intent(LuckyActivity.this, NumbersChooseActivity.class);
 			startActivityForResult(intent, 0);
